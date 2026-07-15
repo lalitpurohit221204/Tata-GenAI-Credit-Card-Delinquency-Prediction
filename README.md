@@ -25,6 +25,15 @@
   <a href="#-technology-stack">Tech Stack</a>
 </p>
 
+<p align="center">
+
+📄 <a href="docs/Task1_EDA_Summary_Report.pdf">EDA Report</a> •
+📈 <a href="docs/Task2_Predictive_Model_Plan.pdf">Predictive Model</a> •
+📑 <a href="docs/Task3_Business_Summary_Report.pdf">Business Report</a> •
+📊 <a href="presentation/Task4_AI_Collections_Strategy.pptx">Presentation</a>
+
+</p>
+
 ---
 
 ## 📌 Project Overview
@@ -77,7 +86,7 @@ G --> H[Business Impact]
 
 ## 📊 Key Findings
 
-This project intentionally reports the analytical results **exactly as observed** — even when they're weaker than expected.
+This project intentionally reports the analytical results exactly as observed — even when they are weaker than expected.
 
 | Finding | Result |
 |---|---|
@@ -89,6 +98,12 @@ This project intentionally reports the analytical results **exactly as observed*
 | Logistic Regression Performance | Mean ROC-AUC = **0.44** |
 
 > **Key observation:** The predictive model demonstrated limited predictive performance (AUC = 0.44). Instead of overstating the model's capability, this project recommends using **transparent, segment-based business rules with human oversight** until a stronger predictive model can be developed on larger production datasets.
+
+## 📈 Project Outcome
+
+Although the Logistic Regression model achieved a modest ROC-AUC of **0.44**, the project successfully identified meaningful business segments through exploratory and combined-segment interaction analysis.
+
+Rather than recommending deployment of an unreliable predictive model, the final solution proposes a transparent, human-supervised collections strategy using high-risk customer segmentation supported by Responsible AI principles.
 
 ---
 
@@ -187,27 +202,53 @@ The proposed solution follows Responsible AI principles:
 
 | Category | Tools |
 |---|---|
-| **Analytics** | Python, pandas, NumPy, scikit-learn |
-| **AI** | Logistic Regression, Decision Trees (conceptual), Neural Networks (conceptual), Agentic AI |
-| **Documentation** | Microsoft Word, Microsoft PowerPoint, Markdown, Mermaid |
-| **GenAI** | Claude, ChatGPT |
+| **Analytics** | Python, pandas, NumPy |
+| **Machine Learning** | scikit-learn, Logistic Regression |
+| **AI Strategy** | Agentic AI, Responsible AI |
+| **Documentation** | Markdown, Mermaid, MS Word, PowerPoint |
+| **GenAI Assistance** | Claude, ChatGPT |
 
 ---
 
 ## 🎯 Skills Demonstrated
 
-`Exploratory Data Analysis` `Data Cleaning` `Feature Engineering` `Predictive Analytics` `Logistic Regression` `Cross Validation` `Business Analytics` `Data Storytelling` `Executive Reporting` `AI Strategy` `Agentic AI` `Responsible AI` `Financial Analytics` `Stakeholder Communication`
+- Exploratory Data Analysis
+- Data Cleaning
+- Feature Engineering
+- Predictive Analytics
+- Logistic Regression
+- Cross Validation
+- Business Analytics
+- Data Storytelling
+- Executive Reporting
+- AI Strategy
+- Agentic AI
+- Responsible AI
+- Financial Analytics
+- Stakeholder Communication
 
 ---
 
 ## 🚀 Future Improvements
 
-- Train advanced models such as Gradient Boosting and XGBoost
+- Expand dataset with production-scale records
 - Improve feature engineering with interaction terms
-- Validate using production-scale datasets
-- Develop a Streamlit dashboard
+- Evaluate Gradient Boosting and XGBoost
+- Deploy a Streamlit dashboard
 - Integrate automated bias monitoring
-- Deploy a real-time AI collections assistant
+- Build a real-time AI collections assistant
+
+---
+
+## 📄 License
+
+This repository is released under the MIT License.
+
+## 🙏 Acknowledgements
+
+- Tata iQ
+- Forage
+- Geldium Finance (Simulated Client)
 
 ---
 
