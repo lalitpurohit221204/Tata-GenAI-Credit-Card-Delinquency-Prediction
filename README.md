@@ -1,234 +1,309 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="AI-Powered Credit Card Delinquency Prediction & Collections Strategy" width="100%">
-</p>
-
-<p align="center">
-  <img alt="Status" src="https://img.shields.io/badge/status-portfolio%20project-3D8BFD">
-  <img alt="Type" src="https://img.shields.io/badge/type-Forage%20Virtual%20Experience-1E2761">
-  <img alt="Client" src="https://img.shields.io/badge/client-Geldium%20Finance%20(simulated)-CADCFC?labelColor=1E2761">
-  <img alt="Model" src="https://img.shields.io/badge/model-Logistic%20Regression-blue">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey">
-</p>
 
 # AI-Powered Credit Card Delinquency Prediction & Autonomous Collections Strategy
 
-**Tata iQ GenAI Powered Data Analytics — Forage Virtual Experience**
-*A simulated AI-transformation consulting engagement for Geldium Finance.*
+**Tata iQ GenAI Powered Data Analytics – Forage Virtual Experience**
 
-> ⚠️ **This is a Forage virtual experience project**, built on a provided simulated dataset. It is not a real client engagement. Every metric in this repository (delinquency rates, correlations, model AUC) is computed directly from the provided 500-row dataset — including where the results are weaker than a polished case study might prefer. See [Honest Findings](#-honest-findings-worth-reading) below.
+*A simulated AI transformation consulting engagement for Geldium Finance.*
 
----
+![Status](https://img.shields.io/badge/Status-Portfolio%20Project-3D8BFD)
+![Type](https://img.shields.io/badge/Type-Forage%20Virtual%20Experience-1E2761)
+![Client](https://img.shields.io/badge/Client-Geldium%20Finance%20(Simulated)-CADCFC)
+![Model](https://img.shields.io/badge/Model-Logistic%20Regression-blue)
+![License](https://img.shields.io/badge/License-MIT-success)
 
-## 📋 Table of Contents
-
-- [Business Problem](#-business-problem)
-- [Project Flow](#-project-flow)
-- [Honest Findings](#-honest-findings-worth-reading)
-- [Architecture](#-agentic-ai-architecture)
-- [Repository Structure](#-repository-structure)
-- [Deliverables](#-deliverables)
-- [Responsible AI](#-responsible-ai)
-- [Technology Stack](#-technology-stack)
-- [Skills Demonstrated](#-skills-demonstrated)
-- [Future Improvements](#-future-improvements)
+</p>
 
 ---
 
-## 🎯 Business Problem
+## 📌 Project Overview
 
-Geldium Finance faces rising credit card delinquency, driven by:
+This repository contains my submission for the **Tata iQ GenAI Powered Data Analytics Virtual Experience Program** on **Forage**.
 
-- Manual, reactive collections processes
+In this simulated consulting engagement, I worked as an **AI Transformation Consultant** to help **Geldium Finance** address rising credit card delinquency through data analytics, predictive modeling, business recommendations, and an AI-powered collections strategy.
+
+> **Note:** This project is based on a **simulated business case and dataset** provided by the Forage virtual experience. All findings and recommendations are derived from that dataset.
+
+---
+
+# 🎯 Business Problem
+
+Geldium Finance is experiencing increasing credit card delinquency due to:
+
+- Manual collections processes
 - Static customer segmentation
-- Poor prioritization of at-risk accounts
-- Limited personalization in outreach
+- Reactive customer outreach
+- Limited personalization
+- Inefficient prioritization of high-risk customers
 
-**Goals of this engagement:** predict delinquency risk, prioritize collections intelligently, automate routine outreach, improve customer experience, and do all of it under Responsible AI and regulatory guardrails (GDPR, ECOA, FCRA, FCA).
+### Project Objectives
+
+- Analyze customer data through Exploratory Data Analysis (EDA)
+- Identify major delinquency risk factors
+- Design a predictive modeling approach
+- Develop business recommendations
+- Propose an AI-powered autonomous collections framework
+- Ensure Responsible AI and regulatory compliance
 
 ---
 
-## 🔄 Project Flow
+# 🔄 Project Workflow
 
 ```mermaid
 flowchart LR
-    A[Customer Dataset<br/>500 records, 19 fields] --> B[Exploratory Data Analysis<br/>Task 1]
-    B --> C[Risk Profiling]
-    C --> D[Predictive Modeling<br/>Task 2]
-    D --> E[Business Recommendations<br/>Task 3]
-    E --> F[Agentic AI Collections Framework<br/>Task 4]
-    F --> G[Responsible AI Review]
-    G --> H[Business Impact]
-    H -.feedback.-> B
+A[Customer Dataset]
+-->B[Exploratory Data Analysis]
+
+B-->C[Risk Profiling]
+
+C-->D[Predictive Modeling]
+
+D-->E[Business Recommendations]
+
+E-->F[AI Collections Strategy]
+
+F-->G[Responsible AI]
+
+G-->H[Business Impact]
 ```
 
 ---
 
-## 🔍 Honest Findings (worth reading)
+# 📊 Key Findings
 
-Most portfolio write-ups of exercises like this present tidy, confident results. This one doesn't, because the data doesn't support that — and that distinction is itself the point of doing real EDA before modeling.
+This project intentionally reports the analytical results **exactly as observed**, even when they are weaker than expected.
 
-| Finding | Detail |
-|---|---|
-| **Overall delinquency rate** | 16.0% (80 of 500 customers) |
-| **Data quality issues found** | `Employment_Status` inconsistently encoded ("Employed" / "employed" / "EMP"); 4 records with Credit_Utilization above 100% |
-| **Feature correlations with delinquency** | All under **0.05** in magnitude — no single feature is a strong linear driver |
-| **Best-performing segment split found** | Unemployed + DTI ≥ 35% → **30.4%** delinquency rate (vs. 16.0% overall), on a small sub-sample of 23 customers |
-| **Logistic regression, 5-fold CV** | Mean **AUC = 0.44** — at or slightly below chance (0.50) |
+| Finding | Result |
+|---------|---------|
+| Dataset Size | 500 Customers |
+| Delinquency Rate | 16% |
+| Missing Values | Income & Loan Balance |
+| Data Quality Issues | Employment Status inconsistencies, Credit Utilization >100% |
+| Strongest Risk Segment | Unemployed + High Debt-to-Income Ratio |
+| Logistic Regression Performance | Mean ROC-AUC = **0.44** |
 
-**What this means:** the tested model isn't reliable enough yet to drive automated decisions. The business recommendation (Task 3) and the collections architecture (Task 4) are therefore built around **transparent, auditable segment rules** rather than a model risk score, with a clear path to revisit modeling once validated on a larger or real production dataset. Reporting a null/weak result honestly, and adapting the recommendation around it, is treated here as more valuable than a more impressive-looking but unsupported narrative.
+### Key Observation
+
+The predictive model demonstrated **limited predictive performance (AUC = 0.44)**.
+
+Instead of overstating the model's capability, this project recommends using **transparent business rules and human oversight** until a stronger predictive model can be developed using larger production datasets.
 
 ---
 
-## 🏗 Agentic AI Architecture
+# 🏗 AI Collections System Architecture
 
 ```mermaid
 flowchart TD
-    subgraph Inputs
-        A1[Customer Data]
-        A2[Payment History]
-        A3[Credit Utilization]
-        A4[Credit Bureau Data]
-        A5[Income]
-    end
 
-    A1 & A2 & A3 & A4 & A5 --> B[Data Pipeline]
-    B --> C[Predictive Model<br/>Logistic Regression]
-    C --> D[Risk Score]
-    D --> E{Decision Engine<br/>Business Rules + AI Score}
-    E --> F1[Low Risk]
-    E --> F2[Medium Risk]
-    E --> F3[High Risk]
+CustomerData[Customer Data]
+-->Pipeline[Data Pipeline]
 
-    F1 --> G1[Standard Reminders]
-    F2 --> G2[Tailored SMS / Email + Payment Plans]
-    F3 --> G3[Hardship Support / Escalation]
+Pipeline-->Model[Predictive Model]
 
-    G1 & G2 & G3 --> H[Learning Loop]
-    H --> I[Outcome Tracking]
-    I --> J[Model Improvement]
-    J -.retrain.-> C
+Model-->RiskScore[Risk Score]
+
+RiskScore-->Decision[Decision Engine]
+
+Decision-->Low[Low Risk]
+
+Decision-->Medium[Medium Risk]
+
+Decision-->High[High Risk]
+
+Low-->Reminder[Standard Reminder]
+
+Medium-->Email[Tailored Email / SMS]
+
+High-->Support[Hardship Support / Escalation]
+
+Reminder-->Learning
+
+Email-->Learning
+
+Support-->Learning
+
+Learning[Learning Loop]
+
+Learning-->Model
 ```
-
-**Learning loop:**
-
-```mermaid
-flowchart LR
-    A[Customer Response] --> B[Outcome Tracking]
-    B --> C[Model & Rule Evaluation]
-    C --> D[Model Improvement]
-    D --> E[Continuous Learning]
-    E -.-> A
-```
-
-**Autonomous vs. human-in-the-loop:**
-
-```mermaid
-flowchart TD
-    subgraph Autonomous["Autonomous (AI-handled)"]
-        A1[Monitor customer behavior]
-        A2[Recommend next-best action]
-        A3[Trigger SMS / email reminders]
-        A4[Adapt messaging from response data]
-    end
-
-    subgraph HumanOversight["Human Oversight (required)"]
-        H1[Hardship approval]
-        H2[Debt restructuring]
-        H3[Legal / compliance review]
-        H4[Sign-off on any model-driven decision]
-    end
-
-    A1 --> A2 --> A3 --> A4
-    A2 -- escalation --> H1
-    A2 -- escalation --> H2
-    A2 -- escalation --> H3
-    A2 -- "model-informed action" --> H4
-```
-
-*(Raw diagram source files are in [`/diagrams`](diagrams/) as `.mmd` files.)*
 
 ---
 
-## 📁 Repository Structure
+# 🤖 Agentic AI Workflow
+
+### Autonomous Activities
+
+- Customer monitoring
+- Risk prediction
+- Personalized reminders
+- Continuous learning
+- Recommendation generation
+
+### Human Oversight
+
+- Hardship approval
+- Debt restructuring
+- Compliance review
+- Legal escalation
+- High-impact decisions
+
+---
+
+# 📁 Repository Structure
 
 ```
-Tata-GenAI-Powered-Data-Analytics/
+Tata-GenAI-Credit-Card-Delinquency-Prediction
+
 │
 ├── README.md
-├── LICENSE
-├── data/
-│   └── Delinquency_prediction_dataset.xlsx
 │
 ├── docs/
-│   ├── Task1_EDA_Summary_Report.docx
-│   ├── Task2_Predictive_Model_Plan.docx
-│   └── Task3_Business_Summary_Report.docx
+│   ├── Task1_EDA_Summary_Report.pdf
+│   ├── Task2_Predictive_Model_Plan.pdf
+│   └── Task3_Business_Summary_Report.pdf
 │
 ├── presentation/
 │   └── Task4_AI_Collections_Strategy.pptx
 │
-├── diagrams/
-│   ├── architecture.mmd
-│   ├── workflow.mmd
-│   ├── learning_loop.mmd
-│   └── agentic_ai.mmd
-│
-├── assets/
-│   ├── banner.svg
-│   └── screenshots/
-│
-├── prompts/
-│   └── prompts_used.md
-│
-└── certificate/
-    └── (add your Tata Forage completion certificate here)
+├── certificate/
+│   └── Tata_Forage_Certificate.pdf
 ```
 
 ---
 
-## 📦 Deliverables
+# 📄 Project Deliverables
 
-| Task | Deliverable | Summary |
-|---|---|---|
-| **1** | [EDA Summary Report](docs/Task1_EDA_Summary_Report.docx) | Missing data, data quality issues, correlation analysis, segment-level risk patterns — computed directly from the dataset |
-| **2** | [Predictive Model Plan](docs/Task2_Predictive_Model_Plan.docx) | Logistic regression built and cross-validated in Python; honest evaluation (AUC 0.44) with a path forward |
-| **3** | [Business Summary Report](docs/Task3_Business_Summary_Report.docx) | SMART recommendation targeting the highest-risk segment found in the data |
-| **4** | [AI Collections Strategy Deck](presentation/Task4_AI_Collections_Strategy.pptx) | 8-slide deck: architecture, agentic AI roles, responsible AI guardrails, model status, business impact |
+### ✅ Task 1
 
----
+Exploratory Data Analysis
 
-## 🛡 Responsible AI
-
-- **Fairness** — segment rules and model outputs monitored across Employment_Status, Age, and Income bands for disparate impact
-- **Explainability** — logistic regression coefficients and transparent segment thresholds, not a black-box score, drive current decisions
-- **Human-in-the-loop** — required for hardship approval, debt restructuring, legal escalation, and any action informed by the model while its AUC remains near chance level
-- **Compliance** — designed with GDPR, ECOA, FCRA, and FCA in mind
-- **Audit logs & continuous monitoring** — every automated action and model retrain should be logged for review
+- Data quality assessment
+- Missing value analysis
+- Correlation analysis
+- Risk profiling
 
 ---
 
-## 🧰 Technology Stack
+### ✅ Task 2
 
-**Analysis:** Python (pandas, scikit-learn) for EDA and model training/cross-validation
-**Modeling:** Logistic Regression (primary); Decision Tree and Neural Network considered as alternatives
-**GenAI:** Claude — analysis structuring, documentation, and repository generation
-**Documentation:** Word (.docx), PowerPoint (.pptx), Markdown, Mermaid diagrams
+Predictive Modeling
 
----
-
-## 🎓 Skills Demonstrated
-
-Exploratory Data Analysis · Data Cleaning & Quality Assessment · Risk Profiling · Predictive Analytics · Logistic Regression · Cross-Validation · Business Analytics · Data Storytelling · Stakeholder Communication · AI Strategy · Agentic AI Design · Responsible AI · Financial Analytics · Executive Reporting
+- Logistic Regression
+- Model evaluation
+- Cross-validation
+- Responsible AI considerations
 
 ---
 
-## 🚀 Future Improvements
+### ✅ Task 3
 
-- Re-test with non-linear models (gradient boosting) and engineered interaction terms (e.g., DTI × Employment Status) to check whether the weak linear signal masks a real non-linear relationship
-- Validate against a larger, real production dataset before any live deployment
-- Build a live dashboard (e.g., Streamlit) for the segment-rules-based risk view
-- Add automated bias-audit reporting across protected segments as part of the learning loop
+Business Report
+
+- Executive summary
+- Business recommendations
+- SMART action plan
+- KPI framework
 
 ---
 
-<p align="center"><i>Tata iQ GenAI Powered Data Analytics · Forage Virtual Experience · Simulated Client Engagement</i></p>
+### ✅ Task 4
+
+AI Collections Strategy
+
+- Agentic AI architecture
+- Human-in-the-loop framework
+- Responsible AI guardrails
+- Business impact
+
+---
+
+# 🛡 Responsible AI
+
+The proposed solution follows Responsible AI principles:
+
+- Fairness
+- Explainability
+- Human Oversight
+- Transparency
+- Audit Logging
+- Continuous Monitoring
+- GDPR Awareness
+- ECOA Compliance
+- FCRA Alignment
+- FCA Principles
+
+---
+
+# 💻 Technology Stack
+
+### Analytics
+
+- Python
+- pandas
+- NumPy
+- scikit-learn
+
+### AI
+
+- Logistic Regression
+- Decision Trees (conceptual)
+- Neural Networks (conceptual)
+- Agentic AI
+
+### Documentation
+
+- Microsoft Word
+- Microsoft PowerPoint
+- Markdown
+- Mermaid
+
+### GenAI
+
+- Claude
+- ChatGPT
+
+---
+
+# 🎯 Skills Demonstrated
+
+- Exploratory Data Analysis
+- Data Cleaning
+- Feature Engineering
+- Predictive Analytics
+- Logistic Regression
+- Cross Validation
+- Business Analytics
+- Data Storytelling
+- Executive Reporting
+- AI Strategy
+- Agentic AI
+- Responsible AI
+- Financial Analytics
+- Stakeholder Communication
+
+---
+
+# 🚀 Future Improvements
+
+- Train advanced models such as Gradient Boosting and XGBoost
+- Improve feature engineering
+- Validate using production-scale datasets
+- Develop a Streamlit dashboard
+- Integrate automated bias monitoring
+- Deploy a real-time AI collections assistant
+
+---
+
+# 📜 Disclaimer
+
+This repository represents work completed as part of the **Tata iQ GenAI Powered Data Analytics Virtual Experience** on **Forage**.
+
+The project is based on a simulated business case and should be considered a portfolio demonstration rather than a production deployment.
+
+---
+
+<p align="center">
+
+**Tata iQ GenAI Powered Data Analytics • Forage Virtual Experience • Portfolio Project**
+
+</p>
