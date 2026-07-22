@@ -2,22 +2,22 @@
 
 # 💳 AI-Powered Credit Card Delinquency Prediction & Autonomous Collections Strategy
 
-### *Tata iQ GenAI Powered Data Analytics — Forage Virtual Experience*
+### *Tata iQ GenAI Powered Data Analytics — Forage Job Simulation*
 
-*A simulated AI transformation consulting engagement for Geldium Finance*
+*Certification exercise completed on Forage — not a real client engagement*
 
 <br>
 
-![Status](https://img.shields.io/badge/Status-Portfolio%20Project-3D8BFD?style=for-the-badge)
-![Type](https://img.shields.io/badge/Type-Forage%20Virtual%20Experience-1E2761?style=for-the-badge)
-![Client](https://img.shields.io/badge/Client-Geldium%20Finance%20(Simulated)-CADCFC?style=for-the-badge&logoColor=black)
-![Model](https://img.shields.io/badge/Model-Logistic%20Regression-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Forage%20Certification%20Project-3D8BFD?style=for-the-badge)
+![Type](https://img.shields.io/badge/Type-Job%20Simulation%20(Not%20a%20Real%20Engagement)-1E2761?style=for-the-badge)
+![Client](https://img.shields.io/badge/Client-Fictional%20(Geldium%20Finance)-CADCFC?style=for-the-badge&logoColor=black)
+![Model](https://img.shields.io/badge/Model-Logistic%20Regression%20%2B%20XGBoost-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
 </p>
 
 <p align="center">
-  <a href="#-project-overview">Overview</a> •
+  <a href="#-what-this-is">Overview</a> •
   <a href="#-business-problem">Problem</a> •
   <a href="#-key-findings">Findings</a> •
   <a href="#-ai-collections-system-architecture">Architecture</a> •
@@ -36,13 +36,13 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 What This Is
 
-This repository contains my submission for the **Tata iQ GenAI Powered Data Analytics Virtual Experience Program** on **Forage**.
+This repository is my completed submission for the **Tata iQ GenAI Powered Data Analytics Job Simulation**, a self-paced certification program hosted on **Forage**.
 
-In this simulated consulting engagement, I worked as an **AI Transformation Consultant** to help **Geldium Finance** address rising credit card delinquency through data analytics, predictive modeling, business recommendations, and an AI-powered collections strategy.
+**This is not a real consulting engagement.** "Geldium Finance" is a fictional company created by Forage for the simulation, and the dataset is a provided sample dataset — not real customer data from any actual business. I completed the four tasks as a self-directed learner earning a completion certificate, not as part of an employer engagement.
 
-> **Note:** This project is based on a **simulated business case and dataset** provided by the Forage virtual experience. All findings and recommendations are derived from that dataset.
+**How this was actually built:** Forage's own task brief for the modeling step only asks for GenAI-generated pseudo-code (no execution required) — see Forage's official example answer, which stops at a conceptual outline. I went further and directed GenAI tools (Claude, ChatGPT) to actually write and execute Python code (pandas, scikit-learn) against the provided dataset — real data cleaning, a real 5-fold cross-validated logistic regression, and a follow-up XGBoost comparison. I do not code myself; the analysis was performed by AI based on my prompts and review, not hand-written by me. The numbers throughout this README (AUC, delinquency rates, segment sizes) are genuine output from that AI-executed analysis, not estimates or Forage's template figures.
 
 ---
 
@@ -95,13 +95,14 @@ This project intentionally reports the analytical results exactly as observed �
 | Missing Values | Income (7.8%), Loan Balance (5.8%), Credit Score (0.4%) |
 | Data Quality Issues | Employment Status inconsistencies, Credit Utilization >100% |
 | Strongest Risk Segment | Unemployed + DTI ≥ 35% → **30.4% delinquency** (n=23) |
-| Logistic Regression Performance | Mean ROC-AUC = **0.44** |
+| Logistic Regression Performance | Mean ROC-AUC = **0.443** (5-fold CV) |
+| XGBoost Comparison | Mean ROC-AUC = **0.375** — underperformed Logistic Regression |
 
-> **Key observation:** The predictive model demonstrated limited predictive performance (AUC = 0.44). Instead of overstating the model's capability, this project recommends using **transparent, segment-based business rules with human oversight** until a stronger predictive model can be developed on larger production datasets.
+> **Key observation:** The predictive model demonstrated limited predictive performance (AUC = 0.443), and a gradient-boosted alternative (XGBoost) was tested as a follow-up but performed worse (AUC = 0.375) — indicating the weak signal is a data-size/noise issue rather than something a more flexible algorithm could recover. Instead of overstating the model's capability, this project recommends using **transparent, segment-based business rules with human oversight** until a stronger predictive model can be developed on larger production datasets.
 
 ## 📈 Project Outcome
 
-Although the Logistic Regression model achieved a modest ROC-AUC of **0.44**, the project successfully identified meaningful business segments through exploratory and combined-segment interaction analysis.
+Although the Logistic Regression model achieved a modest ROC-AUC of **0.443** (and a follow-up XGBoost comparison performed even worse, at 0.375), the project successfully identified meaningful business segments through exploratory and combined-segment interaction analysis.
 
 Rather than recommending deployment of an unreliable predictive model, the final solution proposes a transparent, human-supervised collections strategy using high-risk customer segmentation supported by Responsible AI principles.
 
@@ -184,7 +185,7 @@ Tata-GenAI-Credit-Card-Delinquency-Prediction
 | Task | Focus | Highlights |
 |---|---|---|
 | ✅ **Task 1** — EDA | Data quality & risk profiling | Missing value analysis, correlation analysis, combined-segment interaction analysis |
-| ✅ **Task 2** — Predictive Modeling | Logistic Regression | 5-fold cross-validation, honest AUC reporting, Responsible AI considerations |
+| ✅ **Task 2** — Predictive Modeling | Logistic Regression + XGBoost comparison | 5-fold cross-validation, honest AUC reporting, non-linear model tested and found not to help, Responsible AI considerations |
 | ✅ **Task 3** — Business Report | Executive strategy | SMART action plan, KPI framework, phased roadmap |
 | ✅ **Task 4** — AI Collections Strategy | Agentic AI design | Human-in-the-loop framework, Responsible AI guardrails, business impact |
 
@@ -200,10 +201,12 @@ The proposed solution follows Responsible AI principles:
 
 ## 💻 Technology Stack
 
+*(Executed by GenAI tools under my direction — not hand-coded by me)*
+
 | Category | Tools |
 |---|---|
 | **Analytics** | Python, pandas, NumPy |
-| **Machine Learning** | scikit-learn, Logistic Regression |
+| **Machine Learning** | scikit-learn, Logistic Regression, XGBoost |
 | **AI Strategy** | Agentic AI, Responsible AI |
 | **Documentation** | Markdown, Mermaid, MS Word, PowerPoint |
 | **GenAI Assistance** | Claude, ChatGPT |
@@ -212,31 +215,18 @@ The proposed solution follows Responsible AI principles:
 
 ## 🎯 Skills Demonstrated
 
-- Exploratory Data Analysis
-- Data Cleaning
-- Feature Engineering
-- Predictive Analytics
-- Logistic Regression
-- Cross Validation
+- Directing GenAI tools to perform exploratory data analysis
+- Interpreting and validating AI-generated statistical output (correlations, segment tables, missing-data patterns)
+- Prompting GenAI to build and evaluate a predictive model (logistic regression, cross-validation, XGBoost comparison)
+- Critically assessing model results rather than accepting AI output at face value (e.g., catching a near-chance AUC and reporting it honestly)
 - Business Analytics
 - Data Storytelling
 - Executive Reporting
 - AI Strategy
-- Agentic AI
+- Agentic AI system design
 - Responsible AI
 - Financial Analytics
 - Stakeholder Communication
-
----
-
-## 🚀 Future Improvements
-
-- Expand dataset with production-scale records
-- Improve feature engineering with interaction terms
-- Evaluate Gradient Boosting and XGBoost
-- Deploy a Streamlit dashboard
-- Integrate automated bias monitoring
-- Build a real-time AI collections assistant
 
 ---
 
@@ -254,12 +244,12 @@ This repository is released under the MIT License.
 
 ## 📜 Disclaimer
 
-This repository represents work completed as part of the **Tata iQ GenAI Powered Data Analytics Virtual Experience** on **Forage**. The project is based on a simulated business case and should be considered a portfolio demonstration rather than a production deployment.
+This repository represents work completed as part of the **Tata iQ GenAI Powered Data Analytics Job Simulation** on **Forage**. It is a certification/portfolio exercise, not a real business engagement: "Geldium Finance" is a fictional company invented for the simulation, and the dataset is a provided sample rather than real customer records. Forage's own baseline task brief did not require executing real code (see their example answer, which is pseudo-code only) — the analysis, model, and figures in this repository were produced by directing GenAI tools (Claude, ChatGPT) to write and run the actual Python analysis; I do not code myself. This should be read as a learning/certification artifact reflecting AI-assisted analytical work, not as evidence of personal programming ability.
 
 ---
 
 <p align="center">
 
-**Tata iQ GenAI Powered Data Analytics • Forage Virtual Experience • Portfolio Project**
+**Tata iQ GenAI Powered Data Analytics • Forage Job Simulation • Certification Portfolio Project**
 
 </p>
