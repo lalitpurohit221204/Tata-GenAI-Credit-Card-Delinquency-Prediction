@@ -11,7 +11,7 @@
 ![Status](https://img.shields.io/badge/Status-Forage%20Certification%20Project-3D8BFD?style=for-the-badge)
 ![Type](https://img.shields.io/badge/Type-Job%20Simulation%20(Not%20a%20Real%20Engagement)-1E2761?style=for-the-badge)
 ![Client](https://img.shields.io/badge/Client-Fictional%20(Geldium%20Finance)-CADCFC?style=for-the-badge&logoColor=black)
-![Model](https://img.shields.io/badge/Model-Logistic%20Regression%20%2B%20XGBoost-blue?style=for-the-badge)
+![Model](https://img.shields.io/badge/Model-Logistic%20Regression%20(XGBoost%20Benchmark)-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
 </p>
@@ -42,7 +42,7 @@ This repository is my completed submission for the **Tata iQ GenAI Powered Data 
 
 **This is not a real consulting engagement.** "Geldium Finance" is a fictional company created by Forage for the simulation, and the dataset is a provided sample dataset — not real customer data from any actual business. I completed the four tasks as a self-directed learner earning a completion certificate, not as part of an employer engagement.
 
-**How this was actually built:** Forage's own task brief for the modeling step only asks for GenAI-generated pseudo-code (no execution required) — see Forage's official example answer, which stops at a conceptual outline. I went further and directed GenAI tools (Claude, ChatGPT) to actually write and execute Python code (pandas, scikit-learn) against the provided dataset — real data cleaning, a real 5-fold cross-validated logistic regression, and a follow-up XGBoost comparison. I do not code myself; the analysis was performed by AI based on my prompts and review, not hand-written by me. The numbers throughout this README (AUC, delinquency rates, segment sizes) are genuine output from that AI-executed analysis, not estimates or Forage's template figures.
+**How this was actually built:** Forage's own task brief for the modeling step only asks for GenAI-generated pseudo-code (no execution required) — see Forage's official example answer, which stops at a conceptual outline. The Python analysis was generated using GenAI tools (Claude and ChatGPT) based on my prompts. I reviewed the outputs, validated the results, interpreted the findings, and prepared the final business recommendations. The numbers throughout this README (AUC, delinquency rates, segment sizes) are genuine output from that workflow, not estimates or Forage's template figures.
 
 ---
 
@@ -201,7 +201,7 @@ The proposed solution follows Responsible AI principles:
 
 ## 💻 Technology Stack
 
-*(Executed by GenAI tools under my direction — not hand-coded by me)*
+**AI-assisted Python implementation (pandas, NumPy, scikit-learn, XGBoost) generated with Claude and ChatGPT, followed by review and validation of the results.**
 
 | Category | Tools |
 |---|---|
@@ -215,17 +215,16 @@ The proposed solution follows Responsible AI principles:
 
 ## 🎯 Skills Demonstrated
 
-- Directing GenAI tools to perform exploratory data analysis
-- Interpreting and validating AI-generated statistical output (correlations, segment tables, missing-data patterns)
-- Prompting GenAI to build and evaluate a predictive model (logistic regression, cross-validation, XGBoost comparison)
-- Critically assessing model results rather than accepting AI output at face value (e.g., catching a near-chance AUC and reporting it honestly)
+- AI-assisted Exploratory Data Analysis
+- Data Cleaning & Validation
+- Predictive Model Evaluation
+- Logistic Regression
+- XGBoost Comparison
+- Cross Validation
 - Business Analytics
 - Data Storytelling
 - Executive Reporting
-- AI Strategy
-- Agentic AI system design
 - Responsible AI
-- Financial Analytics
 - Stakeholder Communication
 
 ---
@@ -244,7 +243,7 @@ This repository is released under the MIT License.
 
 ## 📜 Disclaimer
 
-This repository represents work completed as part of the **Tata iQ GenAI Powered Data Analytics Job Simulation** on **Forage**. It is a certification/portfolio exercise, not a real business engagement: "Geldium Finance" is a fictional company invented for the simulation, and the dataset is a provided sample rather than real customer records. Forage's own baseline task brief did not require executing real code (see their example answer, which is pseudo-code only) — the analysis, model, and figures in this repository were produced by directing GenAI tools (Claude, ChatGPT) to write and run the actual Python analysis; I do not code myself. This should be read as a learning/certification artifact reflecting AI-assisted analytical work, not as evidence of personal programming ability.
+This repository represents work completed as part of the **Tata iQ GenAI Powered Data Analytics Job Simulation** on **Forage**. It is a certification/portfolio exercise, not a real business engagement: "Geldium Finance" is a fictional company invented for the simulation, and the dataset is a provided sample rather than real customer records. Forage's own baseline task brief did not require executing real code (see their example answer, which is pseudo-code only) — the analysis, model, and figures in this repository were produced using GenAI tools (Claude, ChatGPT) to generate and run the Python workflow, with my own review, validation, and interpretation of the results. This repository should be viewed as a learning and portfolio project demonstrating AI-assisted analytical workflows rather than production-ready or client-delivered work.
 
 ---
 
